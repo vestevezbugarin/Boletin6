@@ -10,7 +10,7 @@ public class Boletin6_1 {
         if (numero < 0) {
             JOptionPane.showMessageDialog(null, "O número é negativo!", "Negativo", 2);
         } else {
-            JOptionPane.showMessageDialog(null, "O número é positivo!", "Negativo", 1);
+            JOptionPane.showMessageDialog(null, "O número é positivo!", "Positivo", 1);
 
         }
     }
