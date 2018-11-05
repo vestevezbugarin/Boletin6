@@ -22,6 +22,8 @@ public class Boletin6_3 {
         }
         if (numero < 0) {
             JOptionPane.showMessageDialog(null, " - ");
+        } else {
+            System.out.println("Número non válido");
         }
 
     }
