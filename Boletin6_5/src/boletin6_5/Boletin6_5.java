@@ -15,12 +15,12 @@ public class Boletin6_5 {
         int num2 = Integer.parseInt(JOptionPane.showInputDialog("Inserta o segundo número"));
         int num3 = Integer.parseInt(JOptionPane.showInputDialog("Inserta o terceiro número"));
 
-        if (num1 > num2) {
+        if (num1 > num2 && num1 > num3) {
             maior = num1;
-        } else if (num3 > num2) {
+        } else if (num3 > num2 && num3 > num1) {
             maior = num3;
         } else {
-            maior = num3;
+            maior = num2;
         }
 
         JOptionPane.showMessageDialog(null, " O maior é :" + maior);
