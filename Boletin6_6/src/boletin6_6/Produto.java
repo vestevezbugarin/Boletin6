@@ -42,23 +42,21 @@ public class Produto {
     }
 
     public void clasificar() {
-        if (cantidade < 100) {
+        if (cantidade < 0) {
+            JOptionPane.showMessageDialog(null, " Cantidade non válida ");
+        } else if (cantidade < 100) {
             JOptionPane.showMessageDialog(null, " Artigo de consumo baixo. ");
             this.tipoConsumo = "baixo";
         } else if (cantidade <= 500) {
             JOptionPane.showMessageDialog(null, " Artigo de consumo medio. ");
-             this.tipoConsumo = "medio";
+            this.tipoConsumo = "medio";
         } else if (cantidade <= 1000) {
             JOptionPane.showMessageDialog(null, " Artigo de consumo alto ");
-             this.tipoConsumo = "alto";
+            this.tipoConsumo = "alto";
         } else if (cantidade > 1000) {
             JOptionPane.showMessageDialog(null, " Artigo de primeira necesidade ");
-             this.tipoConsumo = "Primeira Necesidade";
-        } else {
-            JOptionPane.showMessageDialog(null, " Cantidade non válida ");
+            this.tipoConsumo = "Primeira Necesidade";
         }
-
-//        return tipoConsumo;
     }
 
 }
