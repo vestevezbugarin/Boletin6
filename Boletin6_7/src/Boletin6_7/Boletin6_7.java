@@ -7,7 +7,7 @@ public class Boletin6_7 {
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
-        byte selec = 1;
+        byte a;
 
         System.out.println("\n***********************************************************************"
                 + "\n                           Calculadora de áreas                        "
@@ -17,9 +17,13 @@ public class Boletin6_7 {
                     + "\n1.- Rectangulo/Cadrado            2.- Triangulo"
                     + "\n3.- Circulo                       4.- Trapecio"
                     + "\n--             Pulsa 0 para sair            --");
-            byte a = teclado.nextByte();
+            a = teclado.nextByte();
 
             switch (a) {
+                case 0:
+                    System.out.println("\n ¡Hasta luego... (ノ ಥ ウಥ )ノ  ");
+                    break;
+
                 case 1:
                     System.out.println("\n***********************************************************************"
                             + "\n                            Rectangulo                                 "
@@ -78,16 +82,14 @@ public class Boletin6_7 {
                             + "\n***********************************************************************");
 
                     break;
-                case 0:
-                    a = 0;
-                    System.out.println("\n ¡Hasta luego... (ノ ಥ ウಥ )ノ  ");
-                    break;
+
                 default:
                     System.out.println("Esta opción non está contemplada.");
                     break;
+
             }
 
-        } while (selec != 0);
+        } while (a != 0);
 
     }
 
