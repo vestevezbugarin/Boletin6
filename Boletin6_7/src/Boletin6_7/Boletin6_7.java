@@ -1,13 +1,11 @@
 package Boletin6_7;
 
-import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Boletin6_7 {
 
     public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
         int opt;
 
         do {
