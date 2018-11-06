@@ -37,7 +37,7 @@ public class Boletin6_7 {
 
                     Triangulo tria1 = new Triangulo(baseT, alturaT);
 
-                    JOptionPane.showMessageDialog(null, "A area do Rectangulo é :" + tria1.calculo());
+                    JOptionPane.showMessageDialog(null, "A area do Triangulo é :" + tria1.calculo());
                     break;
                 case 3:
                     JOptionPane.showMessageDialog(null, "Introduce os valores necesareos para realizar os calculos:", ""
@@ -59,7 +59,7 @@ public class Boletin6_7 {
 
                     Trapecio trap1 = new Trapecio(baseMayor, baseMenor, alto);
 
-                    JOptionPane.showMessageDialog(null, "A area do Circulo é :" + trap1.calculo());
+                    JOptionPane.showMessageDialog(null, "A area do Trapecio é :" + trap1.calculo());
                     break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "¡Hasta luego... (ノ ಥ ウಥ )ノ  ");
