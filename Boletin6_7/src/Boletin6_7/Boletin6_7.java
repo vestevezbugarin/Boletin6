@@ -1,95 +1,79 @@
 package Boletin6_7;
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 public class Boletin6_7 {
 
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
-        byte a;
+        int opt;
 
-        System.out.println("\n***********************************************************************"
-                + "\n                           Calculadora de áreas                        "
-                + "\n***********************************************************************");
         do {
-            System.out.println("\nSelecciona de que queres calcular a area:"
-                    + "\n1.- Rectangulo/Cadrado            2.- Triangulo"
-                    + "\n3.- Circulo                       4.- Trapecio"
-                    + "\n--             Pulsa 0 para sair            --");
-            a = teclado.nextByte();
 
-            switch (a) {
-                case 0:
-                    System.out.println("\n ¡Hasta luego... (ノ ಥ ウಥ )ノ  ");
-                    break;
+            String[] options = {"Rectangulo", "Triangulo", "Circulo", "Trapecio", "Sair"};
+            opt = JOptionPane.showOptionDialog(null, "Seleccione a forma desexada", ""
+                    + "Calculadora de áreas", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+
+            switch (opt) {
 
                 case 1:
-                    System.out.println("\n***********************************************************************"
-                            + "\n                            Rectangulo                                 "
-                            + "\n***********************************************************************"
-                            + "\nIntroduce os valores necesareos para realizar os calculos:"
-                            + "\nBase:");
-                    float base = teclado.nextFloat();
-                    System.out.println("Altura: ");
-                    float altura = teclado.nextFloat();
+                    JOptionPane.showMessageDialog(null, "Introduce os valores necesareos para realizar os calculos:", ""
+                            + "Rectangulo / Cadrado", JOptionPane.INFORMATION_MESSAGE);
+
+                    float base = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Base"));
+                    float altura = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Altura"));
 
                     Rectangulo rect1 = new Rectangulo(base, altura);
 
-                    System.out.println("A area do Rectangulo é :" + rect1.calculo()
-                            + "\n***********************************************************************");
+                    JOptionPane.showMessageDialog(null, "A area do Rectangulo é :" + rect1.calculo());
+
                     break;
                 case 2:
-                    System.out.println("\n***********************************************************************"
-                            + "\n                            Triangulo                                 "
-                            + "\n***********************************************************************"
-                            + "\nIntroduce os valores necesareos para realizar os calculos:"
-                            + "\nBase:");
-                    float baseT = teclado.nextFloat();
-                    System.out.println("Altura: ");
-                    float alturaT = teclado.nextFloat();
+                    JOptionPane.showMessageDialog(null, "Introduce os valores necesareos para realizar os calculos:", ""
+                            + "Triangulo", JOptionPane.INFORMATION_MESSAGE);
+
+                    float baseT = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Base"));
+                    float alturaT = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Altura"));
 
                     Triangulo tria1 = new Triangulo(baseT, alturaT);
-                    System.out.println("A área do Triangulo é:" + tria1.calculo()
-                            + "\n***********************************************************************");
 
+                    JOptionPane.showMessageDialog(null, "A area do Rectangulo é :" + tria1.calculo());
                     break;
                 case 3:
-                    System.out.println("\n***********************************************************************"
-                            + "\n                            Circulo                                 "
-                            + "\n***********************************************************************"
-                            + "\nIntroduce os valores necesareos para realizar os calculos:"
-                            + "\nRadio:");
-                    float radio = teclado.nextFloat();
-                    Circulo circ1 = new Circulo(radio);
-                    System.out.println("A área do circulo é :" + circ1.calculo()
-                            + "\n***********************************************************************");
+                    JOptionPane.showMessageDialog(null, "Introduce os valores necesareos para realizar os calculos:", ""
+                            + "Circulo", JOptionPane.INFORMATION_MESSAGE);
 
+                    float radio = Float.parseFloat(JOptionPane.showInputDialog("Inserte el Radio"));
+
+                    Circulo circ1 = new Circulo(radio);
+
+                    JOptionPane.showMessageDialog(null, "A area do Circulo é :" + circ1.calculo());
                     break;
                 case 4:
-                    System.out.println("\n***********************************************************************"
-                            + "\n                            Trapecio                                 "
-                            + "\n***********************************************************************"
-                            + "\nIntroduce os valores necesareos para realizar os calculos:"
-                            + "\nBase Mayor:");
-                    float baseMayor = teclado.nextFloat();
-                    System.out.println("Base Menor: ");
-                    float baseMenor = teclado.nextFloat();
-                    System.out.println("Altura: ");
-                    float alto = teclado.nextFloat();
-                    Trapecio trap1 = new Trapecio(baseMayor, baseMenor, alto);
-                    System.out.println("A área do Trapecio é :" + trap1.calculo()
-                            + "\n***********************************************************************");
+                    JOptionPane.showMessageDialog(null, "Introduce os valores necesareos para realizar os calculos:", ""
+                            + "Trapecio", JOptionPane.INFORMATION_MESSAGE);
 
+                    float baseMayor = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Base Mayor"));
+                    float baseMenor = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Base Menor"));
+                    float alto = Float.parseFloat(JOptionPane.showInputDialog("Inserte la Altura"));
+
+                    Trapecio trap1 = new Trapecio(baseMayor, baseMenor, alto);
+
+                    JOptionPane.showMessageDialog(null, "A area do Circulo é :" + trap1.calculo());
+                    break;
+                case 0:
+                    JOptionPane.showMessageDialog(null, "¡Hasta luego... (ノ ಥ ウಥ )ノ  ");
                     break;
 
                 default:
-                    System.out.println("Esta opción non está contemplada.");
+                    JOptionPane.showMessageDialog(null, "Esta opción non está contemplada. ");
                     break;
 
             }
 
-        } while (a != 0);
+        } while (opt != 0);
 
     }
 
